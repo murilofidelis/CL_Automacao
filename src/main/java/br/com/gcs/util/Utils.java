@@ -204,19 +204,11 @@ public class Utils {
 		}
 	}
 
-	public static final Charset ISO_8859_1 = Charset.forName("ISO-8859-1");
-	public static final Charset UTF_8 = Charset.forName("UTF-8");
-
 	public String dados(int linha, int coluna) {
 		ArrayList<Cell> celulas = new ArrayList<>();
 		celulas = lerLinhaPlanilha(linha - 1);
 		Cell coluna1 = celulas.get(coluna - 1);
-		String value = coluna1.getContents();
-		// Charset.forName("UTF-8").encode(value);
-
-		byte ptext[] = value.getBytes(ISO_8859_1);
-		String value2 = new String(ptext, ISO_8859_1);
-		return value2;
+		return coluna1.getContents().toString();
 	}
 
 	public static void main(String[] args) {
