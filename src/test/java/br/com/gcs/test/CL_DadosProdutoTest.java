@@ -25,52 +25,53 @@ public class CL_DadosProdutoTest {
 	private ExtentTest logger;
 	private String resultadoEsperado;
 	private VideoRecord video = new VideoRecord();
+	Utils u = new Utils();
 
 	@BeforeClass
 	public void preCondicao() throws Exception {
 		driver = Utils.selecionarNavegador(Utils.propriedades("browser"));
 		reports = new ExtentReports(Utils.propriedades("reportPath"), false);
 		reports.config().documentTitle("CAP LEAO").reportName("GCS").reportHeadline("Cap Leao");
-		// video.inciarGravacao("Dados do Produto");
+		video.inciarGravacao("Dados do Produto");
 		dp = new CL_DadosProduto(driver);
 	}
 
-	@Test(enabled = false, priority = 1)
+	@Test(enabled = true, priority = 1)
 	public void validarCamposObrigatorios() throws Exception {
-		logger = reports.startTest("CT: Validar campos obrigatorios");
+		logger = reports.startTest("CT: " + u.dados(2, 1));
 		logger.assignCategory("Dados do Produto");
 		dp.avancar();
-		assertEquals("* Selecione um valor para o título", dp.recuperarAlerta());
+		assertEquals(u.dados(2, 4), dp.recuperarAlerta());
 		Thread.sleep(2000);
-		dp.selecionarValorTitulo("R$ 60,00");
+		dp.selecionarValorTitulo("R$ " + u.dados(3, 2) + ",00");
 		dp.avancar();
-		assertEquals("* Quantos títulos você quer comprar?", dp.recuperarAlerta());
+		assertEquals(u.dados(3, 4), dp.recuperarAlerta());
 		Thread.sleep(2000);
 		logger.log(LogStatus.PASS, null);
 	}
 
-	@Test(enabled = false, priority = 2)
+	@Test(enabled = true, priority = 2)
 	public void validarValorMesalidade() throws Exception {
-		logger = reports.startTest("CT: Valida Valor da Mensalidade");
+		logger = reports.startTest("CT: " + u.dados(5, 1));
 		logger.assignCategory("Dados do Produto");
-		dp.selecionarValorTitulo("R$ 30,00");
-		dp.selecionarQtdTitulo(2);
-		assertEquals("R$ 30,00", dp.recuperarTotal());
+		dp.selecionarValorTitulo("R$ " + u.dados(5, 2) + ",00");
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(5, 3)));
+		assertEquals("R$ " + u.dados(5, 4) + ",00", dp.recuperarTotal());
 		Thread.sleep(1000);
-		dp.selecionarQtdTitulo(2);
-		assertEquals("R$ 60,00", dp.recuperarTotal());
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(6, 3)));
+		assertEquals("R$ " + u.dados(6, 4) + ",00", dp.recuperarTotal());
 		Thread.sleep(1000);
-		dp.selecionarQtdTitulo(3);
-		assertEquals("R$ 90,00", dp.recuperarTotal());
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(7, 3)));
+		assertEquals("R$ " + u.dados(7, 4) + ",00", dp.recuperarTotal());
 		logger.log(LogStatus.PASS, null);
 	}
 
-	@Test(enabled = false, priority = 3)
-	public void avancarSucesso() throws InterruptedException {
-		logger = reports.startTest("CT: Avançar para próxima aba");
+	@Test(enabled = true, priority = 3)
+	public void avancarProximaAba() throws InterruptedException {
+		logger = reports.startTest("CT: " + u.dados(9, 1));
 		logger.assignCategory("Dados do Produto");
-		dp.selecionarValorTitulo("R$ 30,00");
-		dp.selecionarQtdTitulo(1);
+		dp.selecionarValorTitulo("R$ " + u.dados(9, 2) + ",00");
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(9, 3)));
 		Thread.sleep(1500);
 		dp.avancar();
 		logger.log(LogStatus.PASS, null);
@@ -85,7 +86,7 @@ public class CL_DadosProdutoTest {
 	public void fim() throws Exception {
 		Thread.sleep(2000);
 		driver.quit();
-		// video.pararGravacao();
+		video.pararGravacao();
 	}
 
 }

@@ -203,7 +203,7 @@ public class Utils {
 
 	}
 
-	public static String teste(int linha, int coluna) {
+	public String dados(int linha, int coluna) {
 		ArrayList<Cell> celulas = new ArrayList<>();
 		celulas = lerLinhaPlanilha(linha - 1);
 		Cell coluna1 = celulas.get(coluna - 1);
@@ -212,7 +212,9 @@ public class Utils {
 
 	public static void main(String[] args) {
 		try {
-			System.out.println(teste(2, 2));
+			Utils u = new Utils();
+
+			System.out.println(u.dados(2, 2));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
