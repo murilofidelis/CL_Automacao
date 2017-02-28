@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="Dados do produto(failed)">
+    <classes>
+      <class name="br.com.gcs.test.CL_DadosProdutoTest">
+        <methods>
+          <include name="validarValorMesalidade"/>
+          <include name="preCondicao"/>
+          <include name="posCondicao"/>
+          <include name="avancarSucesso"/>
+          <include name="validarCamposObrigatorios"/>
+        </methods>
+      </class> <!-- br.com.gcs.test.CL_DadosProdutoTest -->
+    </classes>
+  </test> <!-- Dados do produto(failed) -->
+</suite> <!-- Failed suite [Suite] -->

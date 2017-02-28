@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Dados do produto">
+		<classes>
+			<class name="br.com.gcs.test.CL_DadosProdutoTest" />
+		</classes>
+	</test>
+
+	<test name="Meus Dados">
+		<classes>
+			<class name="br.com.gcs.test.CL_MeusDadosTest" />
+		</classes>
+	</test>
+</suite> 
