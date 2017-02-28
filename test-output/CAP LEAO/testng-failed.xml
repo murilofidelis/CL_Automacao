@@ -5,10 +5,9 @@
     <classes>
       <class name="br.com.gcs.test.CL_DadosProdutoTest">
         <methods>
-          <include name="validarValorMesalidade"/>
+          <include name="fim"/>
           <include name="preCondicao"/>
           <include name="posCondicao"/>
-          <include name="avancarSucesso"/>
           <include name="validarCamposObrigatorios"/>
         </methods>
       </class> <!-- br.com.gcs.test.CL_DadosProdutoTest -->

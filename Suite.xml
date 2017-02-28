@@ -6,10 +6,10 @@
 			<class name="br.com.gcs.test.CL_DadosProdutoTest" />
 		</classes>
 	</test>
-
-	<test name="Meus Dados">
+ 	<test name="Meus Dados">
 		<classes>
 			<class name="br.com.gcs.test.CL_MeusDadosTest" />
 		</classes>
-	</test>
+	</test> 
+	
 </suite> 

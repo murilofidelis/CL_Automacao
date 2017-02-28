@@ -70,7 +70,7 @@ public class CL_MeusDadosTest {
 		logger.assignCategory("Meus Dados");
 		md.informarDadosPessoais("Nome Teste", null, "00000000", null, null, null, null, null);
 		md.avancar();
-		resultadoEsperado = "Data IncorretaX";
+		resultadoEsperado = "Data Incorreta";
 		assertEquals(resultadoEsperado, md.recuperarAlerta());
 		logger.log(LogStatus.PASS, "Resultado Obtido: " + md.recuperarAlerta());
 	}
@@ -104,7 +104,7 @@ public class CL_MeusDadosTest {
 	public void fim() throws Exception {
 		Thread.sleep(2000);
 		driver.quit();
-	//	video.pararGravacao();
+//		video.pararGravacao();
 	}
 
 }

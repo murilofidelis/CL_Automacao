@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Dados do produto(failed)">
+  <test name="Meus Dados(failed)">
     <classes>
-      <class name="br.com.gcs.test.CL_DadosProdutoTest">
+      <class name="br.com.gcs.test.CL_MeusDadosTest">
         <methods>
-          <include name="validarValorMesalidade"/>
+          <include name="fim"/>
+          <include name="cpfInvalido"/>
+          <include name="dataInvalida"/>
           <include name="preCondicao"/>
           <include name="posCondicao"/>
-          <include name="avancarSucesso"/>
-          <include name="validarCamposObrigatorios"/>
+        </methods>
+      </class> <!-- br.com.gcs.test.CL_MeusDadosTest -->
+      <class name="br.com.gcs.test.CL_DadosProdutoTest">
+        <methods>
+          <include name="fim"/>
+          <include name="preCondicao"/>
+          <include name="posCondicao"/>
         </methods>
       </class> <!-- br.com.gcs.test.CL_DadosProdutoTest -->
     </classes>
-  </test> <!-- Dados do produto(failed) -->
+  </test> <!-- Meus Dados(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -1,66 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="1" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24658" started-at="2017-02-28T18:15:30Z" finished-at="2017-02-28T18:15:54Z">
+  <suite name="Suite" duration-ms="61768" started-at="2017-02-28T22:26:47Z" finished-at="2017-02-28T22:27:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24658" started-at="2017-02-28T18:15:30Z" finished-at="2017-02-28T18:15:54Z">
+    <test name="Dados do produto" duration-ms="19814" started-at="2017-02-28T22:26:47Z" finished-at="2017-02-28T22:27:07Z">
       <class name="br.com.gcs.test.CL_DadosProdutoTest">
-        <test-method status="PASS" signature="preCondicao()[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="preCondicao" is-config="true" duration-ms="6908" started-at="2017-02-28T15:15:30Z" finished-at="2017-02-28T15:15:37Z">
+        <test-method status="PASS" signature="preCondicao()[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="preCondicao" is-config="true" duration-ms="7128" started-at="2017-02-28T19:26:47Z" finished-at="2017-02-28T19:26:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preCondicao -->
-        <test-method status="PASS" signature="validarCamposObrigatorios()[pri:1, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="validarCamposObrigatorios" duration-ms="5933" started-at="2017-02-28T15:15:37Z" finished-at="2017-02-28T15:15:43Z">
+        <test-method status="PASS" signature="camposObrigatorios()[pri:1, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="camposObrigatorios" duration-ms="4680" started-at="2017-02-28T19:26:54Z" finished-at="2017-02-28T19:26:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- validarCamposObrigatorios -->
-        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="posCondicao" is-config="true" duration-ms="12" started-at="2017-02-28T15:15:43Z" finished-at="2017-02-28T15:15:43Z">
+        </test-method> <!-- camposObrigatorios -->
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="posCondicao" is-config="true" duration-ms="9" started-at="2017-02-28T19:26:59Z" finished-at="2017-02-28T19:26:59Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validarCamposObrigatorios status=SUCCESS method=CL_DadosProdutoTest.validarCamposObrigatorios()[pri:1, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350] output={null}]]]>
+                <![CDATA[[TestResult name=camposObrigatorios status=SUCCESS method=CL_DadosProdutoTest.camposObrigatorios()[pri:1, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- posCondicao -->
-        <test-method status="PASS" signature="validarValorMesalidade()[pri:2, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="validarValorMesalidade" duration-ms="3706" started-at="2017-02-28T15:15:43Z" finished-at="2017-02-28T15:15:46Z">
+        <test-method status="PASS" signature="validarValorMesalidade()[pri:2, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="validarValorMesalidade" duration-ms="2724" started-at="2017-02-28T19:26:59Z" finished-at="2017-02-28T19:27:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validarValorMesalidade -->
-        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="posCondicao" is-config="true" duration-ms="4" started-at="2017-02-28T15:15:46Z" finished-at="2017-02-28T15:15:46Z">
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="posCondicao" is-config="true" duration-ms="2" started-at="2017-02-28T19:27:02Z" finished-at="2017-02-28T19:27:02Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=validarValorMesalidade status=SUCCESS method=CL_DadosProdutoTest.validarValorMesalidade()[pri:2, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350] output={null}]]]>
+                <![CDATA[[TestResult name=validarValorMesalidade status=SUCCESS method=CL_DadosProdutoTest.validarValorMesalidade()[pri:2, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- posCondicao -->
-        <test-method status="PASS" signature="avancarProximaAba()[pri:3, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="avancarProximaAba" duration-ms="5185" started-at="2017-02-28T15:15:46Z" finished-at="2017-02-28T15:15:52Z">
+        <test-method status="PASS" signature="avancarProximaAba()[pri:3, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="avancarProximaAba" duration-ms="1762" started-at="2017-02-28T19:27:02Z" finished-at="2017-02-28T19:27:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- avancarProximaAba -->
-        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="posCondicao" is-config="true" duration-ms="6" started-at="2017-02-28T15:15:52Z" finished-at="2017-02-28T15:15:52Z">
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="posCondicao" is-config="true" duration-ms="4" started-at="2017-02-28T19:27:03Z" finished-at="2017-02-28T19:27:03Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=avancarProximaAba status=SUCCESS method=CL_DadosProdutoTest.avancarProximaAba()[pri:3, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350] output={null}]]]>
+                <![CDATA[[TestResult name=avancarProximaAba status=SUCCESS method=CL_DadosProdutoTest.avancarProximaAba()[pri:3, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- posCondicao -->
-        <test-method status="PASS" signature="fim()[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@548e7350]" name="fim" is-config="true" duration-ms="2887" started-at="2017-02-28T15:15:52Z" finished-at="2017-02-28T15:15:54Z">
+        <test-method status="PASS" signature="fim()[pri:0, instance:br.com.gcs.test.CL_DadosProdutoTest@270421f5]" name="fim" is-config="true" duration-ms="3494" started-at="2017-02-28T19:27:03Z" finished-at="2017-02-28T19:27:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fim -->
       </class> <!-- br.com.gcs.test.CL_DadosProdutoTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Dados do produto -->
+    <test name="Meus Dados" duration-ms="41938" started-at="2017-02-28T22:27:07Z" finished-at="2017-02-28T22:27:49Z">
+      <class name="br.com.gcs.test.CL_MeusDadosTest">
+        <test-method status="PASS" signature="preCondicao()[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="preCondicao" is-config="true" duration-ms="8557" started-at="2017-02-28T19:27:07Z" finished-at="2017-02-28T19:27:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- preCondicao -->
+        <test-method status="PASS" signature="cpfInvalido()[pri:1, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="cpfInvalido" duration-ms="17260" started-at="2017-02-28T19:27:15Z" finished-at="2017-02-28T19:27:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cpfInvalido -->
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="posCondicao" is-config="true" duration-ms="4" started-at="2017-02-28T19:27:33Z" finished-at="2017-02-28T19:27:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cpfInvalido status=SUCCESS method=CL_MeusDadosTest.cpfInvalido()[pri:1, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- posCondicao -->
+        <test-method status="PASS" signature="nomeIncompleto()[pri:2, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="nomeIncompleto" duration-ms="4219" started-at="2017-02-28T19:27:33Z" finished-at="2017-02-28T19:27:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- nomeIncompleto -->
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="posCondicao" is-config="true" duration-ms="16" started-at="2017-02-28T19:27:37Z" finished-at="2017-02-28T19:27:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=nomeIncompleto status=SUCCESS method=CL_MeusDadosTest.nomeIncompleto()[pri:2, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- posCondicao -->
+        <test-method status="PASS" signature="dataInvalida()[pri:3, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="dataInvalida" duration-ms="3195" started-at="2017-02-28T19:27:37Z" finished-at="2017-02-28T19:27:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- dataInvalida -->
+        <test-method status="PASS" signature="validarRenda()[pri:4, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="validarRenda" duration-ms="5346" started-at="2017-02-28T19:27:40Z" finished-at="2017-02-28T19:27:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validarRenda -->
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="posCondicao" is-config="true" duration-ms="0" started-at="2017-02-28T19:27:40Z" finished-at="2017-02-28T19:27:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=dataInvalida status=SUCCESS method=CL_MeusDadosTest.dataInvalida()[pri:3, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- posCondicao -->
+        <test-method status="PASS" signature="posCondicao(org.testng.ITestResult)[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="posCondicao" is-config="true" duration-ms="2" started-at="2017-02-28T19:27:45Z" finished-at="2017-02-28T19:27:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validarRenda status=SUCCESS method=CL_MeusDadosTest.validarRenda()[pri:4, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- posCondicao -->
+        <test-method status="PASS" signature="fim()[pri:0, instance:br.com.gcs.test.CL_MeusDadosTest@c39f790]" name="fim" is-config="true" duration-ms="3338" started-at="2017-02-28T19:27:45Z" finished-at="2017-02-28T19:27:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fim -->
+      </class> <!-- br.com.gcs.test.CL_MeusDadosTest -->
+    </test> <!-- Meus Dados -->
+  </suite> <!-- Suite -->
 </testng-results>
