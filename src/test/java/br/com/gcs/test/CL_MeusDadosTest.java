@@ -27,6 +27,7 @@ public class CL_MeusDadosTest {
 	private ExtentTest logger;
 	private String resultadoEsperado;
 	private VideoRecord video = new VideoRecord();
+	Utils u = new Utils();
 
 	@BeforeClass
 	public void preCondicao() throws Exception {
@@ -36,53 +37,53 @@ public class CL_MeusDadosTest {
 		dp = new CL_DadosProduto(driver);
 		md = new CL_MeusDados(driver);
 		dp.avancarSucesso();
-	//	video.inciarGravacao("Meus Dados");
+		//video.inciarGravacao("Meus Dados");
 	}
 
 	@Test(enabled = true, priority = 1)
 	public void cpfInvalido() throws InterruptedException {
-		logger = reports.startTest("CT: CPF inválido");
+		logger = reports.startTest("CT: " + u.dados(2, 3, 1));
 		logger.assignCategory("Meus Dados");
-		md.informarDadosPessoais("Nome Teste", "1234567899", "29091991", "ADVOGADO", "Até R$ 500,00",
-				"de R$ 500,01 a R$ 1.500,00", "Solteiro", "Masculino");
-		md.informarEndereco("70040907");
-		md.informarContato("61", "99553311", "teste@teste.com", "Não", "Não");
+		md.informarDadosPessoais(u.dados(2, 3, 3), u.dados(2, 3, 4), u.dados(2, 3, 5), u.dados(2, 3, 6),
+				u.dados(2, 3, 7), u.dados(2, 3, 8), u.dados(2, 3, 9), u.dados(2, 3, 10));
+		md.informarEndereco(u.dados(2, 3, 11));
+		md.informarContato(u.dados(2, 3, 17), u.dados(2, 3, 18), u.dados(2, 3, 23), u.dados(2, 3, 24),
+				u.dados(2, 3, 25));
 		md.avancar();
-		resultadoEsperado = "CPF Inválido";
+		resultadoEsperado = u.dados(2, 3, 26);
 		assertEquals(resultadoEsperado, md.recuperarAlerta());
 		logger.log(LogStatus.PASS, "Resultado Obtido: " + md.recuperarAlerta());
 	}
 
 	@Test(enabled = true, priority = 2)
 	public void nomeIncompleto() throws InterruptedException {
-		logger = reports.startTest("CT: Nome Incompleto");
+		logger = reports.startTest("CT: " + u.dados(2, 5, 1));
 		logger.assignCategory("Meus Dados");
-		md.informarDadosPessoais("Nome", Utils.cpf(), null, null, null, null, null, null);
+		md.informarDadosPessoais(u.dados(2, 5, 3), Utils.cpf(), null, null, null, null, null, null);
 		md.avancar();
-		resultadoEsperado = "Por favor, digite o nome completo";
+		resultadoEsperado = u.dados(2, 5, 26);
 		assertEquals(resultadoEsperado, md.recuperarAlerta());
 		logger.log(LogStatus.PASS, "Resultado Obtido: " + md.recuperarAlerta());
 	}
 
 	@Test(enabled = true, priority = 3)
 	public void dataInvalida() throws InterruptedException {
-		logger = reports.startTest("CT: Data inválida");
+		logger = reports.startTest("CT: " + u.dados(2, 7, 1));
 		logger.assignCategory("Meus Dados");
-		md.informarDadosPessoais("Nome Teste", null, "00000000", null, null, null, null, null);
+		md.informarDadosPessoais(u.dados(2, 7, 3), null, u.dados(2, 7, 5), null, null, null, null, null);
 		md.avancar();
-		resultadoEsperado = "Data Incorreta";
+		resultadoEsperado = u.dados(2, 7, 26);
 		assertEquals(resultadoEsperado, md.recuperarAlerta());
 		logger.log(LogStatus.PASS, "Resultado Obtido: " + md.recuperarAlerta());
 	}
 
 	@Test(enabled = true, priority = 4)
 	public void validarRenda() throws Exception {
-		logger = reports.startTest("CT: Renda individual menor que renda familiar");
+		logger = reports.startTest("CT: " + u.dados(2, 9, 1));
 		logger.assignCategory("Meus Dados");
-		md.informarDadosPessoais("Nome Teste", null, "29091991", null, "de R$ 1500,01 a R$ 2.500,00", "Até R$ 500,00",
-				null, null);
+		md.informarDadosPessoais(null, null, u.dados(2, 9, 5), null, u.dados(2, 9, 7), u.dados(2, 9, 8), null, null);
 		md.avancar();
-		resultadoEsperado = "Renda individual não deve ser maior que a renda familiar";
+		resultadoEsperado = u.dados(2, 9, 26);
 		assertEquals(resultadoEsperado, md.recuperarAlerta());
 		logger.log(LogStatus.PASS, "Resultado Obtido: " + md.recuperarAlerta());
 	}
@@ -104,7 +105,7 @@ public class CL_MeusDadosTest {
 	public void fim() throws Exception {
 		Thread.sleep(2000);
 		driver.quit();
-//		video.pararGravacao();
+		//video.pararGravacao();
 	}
 
 }

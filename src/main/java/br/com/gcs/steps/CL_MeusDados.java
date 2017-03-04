@@ -23,6 +23,7 @@ public class CL_MeusDados {
 
 	public void informarDadosPessoais(String nome, String cpf, String dtNascimento, String profissao,
 			String rendaIndividual, String rendaFamliar, String estadoCivil, String sexo) throws InterruptedException {
+
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("divSegundoStep")));
 		if (nome != null) {
 			page.campo_nome.clear();

@@ -6,7 +6,7 @@
       <class name="br.com.gcs.test.CL_MeusDadosTest">
         <methods>
           <include name="fim"/>
-          <include name="dataInvalida"/>
+          <include name="cpfInvalido"/>
           <include name="preCondicao"/>
           <include name="posCondicao"/>
         </methods>

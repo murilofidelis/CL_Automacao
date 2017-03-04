@@ -27,10 +27,11 @@ public class SpecializedScreenRecorder extends ScreenRecorder {
 		if (!movieFolder.exists()) {
 			movieFolder.mkdirs();
 		} else if (!movieFolder.isDirectory()) {
-			throw new IOException("\"" + movieFolder + "\" is not a directory.");
+			throw new IOException("\"" + movieFolder + "\" não é um diretorio.");
 		}
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH.mm.ss");
-		return new File(movieFolder,name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
+		return new File(movieFolder,
+				name + "-" + dateFormat.format(new Date()) + "." + Registry.getInstance().getExtension(fileFormat));
 	}
 }

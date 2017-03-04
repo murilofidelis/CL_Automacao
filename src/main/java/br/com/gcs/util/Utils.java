@@ -2,7 +2,6 @@ package br.com.gcs.util;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -25,6 +24,7 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.WorkbookSettings;
+import jxl.read.biff.BiffException;
 
 public class Utils {
 
@@ -172,50 +172,27 @@ public class Utils {
 
 	}
 
-	public static String lerCelulaPlanilha(String Planilha, int linha, int coluna) {
-		String caminho = Planilha;
-		File fp = new File(caminho);
+	public String dados(int nunAba, int linha, int coluna) {
 		try {
-			Workbook wb = Workbook.getWorkbook(fp);
-			Sheet aba = wb.getSheet(0);
-			return aba.getCell(coluna - 1, linha - 1).getContents().toString();
-		} catch (Exception e) {
-			return "Erro de LEITURA: " + e.getMessage();
-		}
-	}
-
-	public static ArrayList<Cell> lerLinhaPlanilha(int numLinha) {
-		try {
-			ArrayList<Cell> celulas = new ArrayList<>();
 			File arquivo = new File(propriedades("planilhaDados"));
 			WorkbookSettings workbookSettings = new WorkbookSettings();
 			workbookSettings.setEncoding("Cp1252");
-			Workbook planilha = Workbook.getWorkbook(arquivo, workbookSettings);
-			Sheet aba = planilha.getSheet(0); // indice da aba
-			Cell[] linha = aba.getRow(numLinha);
-			for (Cell c : linha) {
-				c.getContents().toString();
-				celulas.add(c);
-			}
-			return celulas;
+			Workbook planilha;
+			planilha = Workbook.getWorkbook(arquivo, workbookSettings);
+			Sheet aba = planilha.getSheet(nunAba - 1);
+			return aba.getCell(coluna - 1, linha - 1).getContents().toString();
 		} catch (Exception e) {
 			e.printStackTrace();
-			return null;
+			return "Erro ao ler planilha: " + e.getMessage();
 		}
-	}
 
-	public String dados(int linha, int coluna) {
-		ArrayList<Cell> celulas = new ArrayList<>();
-		celulas = lerLinhaPlanilha(linha - 1);
-		Cell coluna1 = celulas.get(coluna - 1);
-		return coluna1.getContents().toString();
 	}
 
 	public static void main(String[] args) {
 		try {
 			Utils u = new Utils();
 
-			System.out.println(u.dados(2, 4));
+			System.out.println(u.dados(0, 2, 4));
 
 		} catch (Exception e) {
 			e.printStackTrace();

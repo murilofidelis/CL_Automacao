@@ -7,18 +7,10 @@
         <methods>
           <include name="fim"/>
           <include name="cpfInvalido"/>
-          <include name="dataInvalida"/>
           <include name="preCondicao"/>
           <include name="posCondicao"/>
         </methods>
       </class> <!-- br.com.gcs.test.CL_MeusDadosTest -->
-      <class name="br.com.gcs.test.CL_DadosProdutoTest">
-        <methods>
-          <include name="fim"/>
-          <include name="preCondicao"/>
-          <include name="posCondicao"/>
-        </methods>
-      </class> <!-- br.com.gcs.test.CL_DadosProdutoTest -->
     </classes>
   </test> <!-- Meus Dados(failed) -->
 </suite> <!-- Failed suite [Suite] -->

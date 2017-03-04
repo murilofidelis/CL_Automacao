@@ -32,21 +32,21 @@ public class CL_DadosProdutoTest {
 		driver = Utils.selecionarNavegador(Utils.propriedades("browser"));
 		reports = new ExtentReports(Utils.propriedades("reportPath"), false);
 		reports.config().documentTitle("CAP LEAO").reportName("GCS").reportHeadline("Cap Leao");
-		//video.inciarGravacao("Dados do Produto");
-		dp = new CL_DadosProduto(driver);
+		video.inciarGravacao("Dados do Produto");
+		//dp = new CL_DadosProduto(driver);
 	}
 
 	@Test(enabled = true, priority = 1)
 	public void camposObrigatorios() throws Exception {
-		logger = reports.startTest("CT: Validar campos obrigatórios");
+		logger = reports.startTest("CT: " + u.dados(1, 2, 1));
 		logger.assignCategory("Dados do Produto");
 		dp.avancar();
-		resultadoEsperado = u.dados(2, 4);
+		resultadoEsperado = u.dados(1, 2, 4);
 		assertEquals(resultadoEsperado, dp.recuperarAlerta());
-		dp.selecionarValorTitulo("R$ " + u.dados(3, 2) + ",00");
+		dp.selecionarValorTitulo("R$ " + u.dados(1, 3, 2) + ",00");
 		Thread.sleep(2000);
 		dp.avancar();
-		resultadoEsperado = u.dados(3, 4);
+		resultadoEsperado = u.dados(1, 3, 4);
 		assertEquals(resultadoEsperado, dp.recuperarAlerta());
 		Thread.sleep(2000);
 		logger.log(LogStatus.PASS, null);
@@ -54,26 +54,26 @@ public class CL_DadosProdutoTest {
 
 	@Test(enabled = true, priority = 2)
 	public void validarValorMesalidade() throws Exception {
-		logger = reports.startTest("CT: Validar Valor da Mensalidade");
+		logger = reports.startTest("CT: " + u.dados(1, 5, 1));
 		logger.assignCategory("Dados do Produto");
-		dp.selecionarValorTitulo("R$ " + u.dados(5, 2) + ",00");
-		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(5, 3)));
-		assertEquals("R$ " + u.dados(5, 4) + ",00", dp.recuperarTotal());
+		dp.selecionarValorTitulo("R$ " + u.dados(1, 5, 2) + ",00");
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(1, 5, 3)));
+		assertEquals("R$ " + u.dados(1, 5, 4) + ",00", dp.recuperarTotal());
 		Thread.sleep(1000);
-		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(6, 3)));
-		assertEquals("R$ " + u.dados(6, 4) + ",00", dp.recuperarTotal());
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(1, 6, 3)));
+		assertEquals("R$ " + u.dados(1, 6, 4) + ",00", dp.recuperarTotal());
 		Thread.sleep(1000);
-		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(7, 3)));
-		assertEquals("R$ " + u.dados(7, 4) + ",00", dp.recuperarTotal());
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(1, 7, 3)));
+		assertEquals("R$ " + u.dados(1, 7, 4) + ",00", dp.recuperarTotal());
 		logger.log(LogStatus.PASS, null);
 	}
 
 	@Test(enabled = true, priority = 3)
 	public void avancarProximaAba() throws InterruptedException {
-		logger = reports.startTest("CT: Avançar para próxima aba");
+		logger = reports.startTest("CT: " + u.dados(1, 9, 1));
 		logger.assignCategory("Dados do Produto");
-		dp.selecionarValorTitulo("R$ " + u.dados(9, 2) + ",00");
-		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(9, 3)));
+		dp.selecionarValorTitulo("R$ " + u.dados(1, 9, 2) + ",00");
+		dp.selecionarQtdTitulo(Integer.parseInt(u.dados(1, 9, 3)));
 		Thread.sleep(1500);
 		dp.avancar();
 		logger.log(LogStatus.PASS, null);
