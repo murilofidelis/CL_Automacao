@@ -172,7 +172,7 @@ public class Utils {
 
 	}
 
-	public String dados(int nunAba, int linha, int coluna) {
+	public static String dados(int nunAba, int linha, int coluna) {
 		try {
 			File arquivo = new File(propriedades("planilhaDados"));
 			WorkbookSettings workbookSettings = new WorkbookSettings();
@@ -190,9 +190,8 @@ public class Utils {
 
 	public static void main(String[] args) {
 		try {
-			Utils u = new Utils();
 
-			System.out.println(u.dados(0, 2, 4));
+			System.out.println(dados(1, 2, 4));
 
 		} catch (Exception e) {
 			e.printStackTrace();
